@@ -1,5 +1,10 @@
 import styled from "styled-components";
-export default function Header({ isLarge, onSetIsLarge }) {
+import { LargeContext } from "../../context/LargeConext";
+import { useContext } from "react";
+
+export default function Header() {
+  const { isLarge, onSetIsLarge } = useContext(LargeContext);
+
   return (
     <StyledHeader>
       <div>

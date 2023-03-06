@@ -1,8 +1,11 @@
 import PlaceCard from "../PlaceCard";
 import { places } from "../../data/places";
 import styled from "styled-components";
+import { LargeContext } from "../../context/LargeConext";
+import { useContext } from "react";
 
-export default function PlaceList({ isLarge }) {
+export default function PlaceList() {
+  const { isLarge } = useContext(LargeContext);
   const listItems = places.map((place) => (
     <li key={place.id}>
       <PlaceCard place={place} isLarge={isLarge} />
